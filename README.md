@@ -10,15 +10,20 @@ G++ Compiler or C++ compiler equivalent.
 
 ## Installation
   Step 1: Clone Git Repository or download Crazy-Eights.cpp file
+  
   Step 2: Ensure you have G++ compiler already downloaded with g++ --version on Windows.
+  
   Step 3: Compile the C++ program with the command "g++ -o <nickname> Crazy-Eights.cpp" within the terminal.
+  
   Step 4: Run the newly compiled executable file with "<nickname>.exe"
+  
   Step 5: Enjoy your game! The AIs are pretty simplistic in their playing style, so victory should be easily attainable... I hope! :D
+  
   Step 6 (EXTRA): If you are really desperate, inputting '?' will reveal your opponent's hand. But do so, at the expense of your own fun :(
-  As addressed in the Project Overview, this project grants users to play a Crazy
 
 ## Technology Used
   Programming Lanaguage: C++
+  
   Rationale: Putting my C++ skills to the test.
   
   
