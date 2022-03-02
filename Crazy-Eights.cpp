@@ -97,19 +97,28 @@ int main() {
 		if(k % 4 == 0){
 			cout << "Pile has " << pile.back() << " <--- your turn" << endl;
 			players.at(0).reveal();
-			cout << "Which one to play?"; cin >> cardLetter;
+			cout << "Which one to play?" << endl; 
+			cin >> cardLetter;
 			cout << endl;
 
 			while(cardLetter == '?'){
 				for(int i = 1, len = players.size(); i < len; ++i){ cout<< players.at(i) << endl; }
-				cout << "Which one to play?"; cin >> cardLetter;
+				cout << "Which one to play?" << endl; 
+				cin >> cardLetter;
+			}
+
+			while(cardLetter - 'a' > players.at(0).fsize() && deck.size() != 0){
+				cout << "You chose an out-of-scope card letter, try again with a correct one!" << endl;
+				cin >> cardLetter;
 			}
 
 			while(cardLetter - 'a' == players.at(0).fsize() && deck.size() != 0){
 				players.at(0).push_back(deck.back());
 				deck.pop_back();
 				players.at(0).reveal();
-				cout << "Which one to play?"; cin >> cardLetter;
+				cout << "Which one to play?" << endl; 
+				cin >> cardLetter;
+				cout << endl;
 			}
 
 			if(deck.size() == 0){ cout<< "Deck has finished" << endl; break; }
@@ -119,22 +128,30 @@ int main() {
 
 				while(cardLetter == '?'){
 					for(int i = 1, len = players.size(); i < len; ++i){ cout<< players.at(i) << endl;}
-					cout << "Which one to play?" ; cin >> cardLetter; break;
+					cout << "Which one to play?" << endl; 
+					cin >> cardLetter; 
+					break;
 				}
 
 				while(cardLetter - 'a' == players.at(0).fsize() && deck.size() != 0){
 					players.at(0).push_back(deck.back());
 					deck.pop_back();
 					players.at(0).reveal();
-					cout << "Which one to play?"; cin >> cardLetter;
+					cout << "Which one to play?" << endl; 
+					cin >> cardLetter;
 				}
 
 				if(deck.size() == 0){ cout<< "Deck has finished" << endl; break; }
 			}
 
 			if(players.at(0).num_finder(cardLetter) == 8){
-				cout << "Which suit do you want?";
+				cout << "Which suit do you want?" << endl;
 				cin >> suitChoice;
+				while(toupper(suitChoice) != 'D' && toupper(suitChoice) != 'S' && toupper(suitChoice) != 'C' && toupper(suitChoice) != 'H') { 
+					cout << "Incorrect suit choice, Choose either H, S, D, or C" << endl;
+					cin >> suitChoice; 
+				}
+				cout << endl;
 				pile.push_back(Card(toupper(suitChoice), 14));
 				cout << "Pile has " << pile.back() << endl;
 				players.at(0).erase(cardLetter);
