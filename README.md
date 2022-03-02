@@ -1,4 +1,4 @@
-# CrazyEights
+# Crazy-Eights
 
 ## Project Overview
 A Project that relates to the creation of a 1-Player Crazy Eights Game with 3 AI-based opponents. I decided to work on this project to test my C++ skills at the moment, this project was originally completed during 2019, but it was never updated to my GitHub until
